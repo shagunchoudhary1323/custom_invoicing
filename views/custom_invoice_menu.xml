@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<data>
+         <record id="action_custom_invoice" model="ir.actions.act_window">
+            <field name="name">Custom Invoices</field>
+            <field name="res_model">custom_invoicing.invoice</field>
+            <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="custom_invoicing.view_custom_invoice_tree"/>
+        </record>
+
+
+         <menuitem id="menu_invoicing" name="CustomInvoicing Menu"
+                   action="action_custom_invoice" sequence="10"
+         web_icon="custom_invoicing,static/description/icon.png"/>
+</data>
+</odoo>

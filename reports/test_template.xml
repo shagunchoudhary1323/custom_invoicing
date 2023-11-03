@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_custom_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <!-- Header -->
+                    <div class="header">
+                         <div class="text-center" style="border-bottom: 1px solid black;">
+                            <p>Company:
+                               Custom Invoicing Module
+                            </p>
+                            <!-- Add more company information fields as needed -->
+                        </div>
+                    </div>
+                    <div class="page">
+                        <main>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Invoice</th>
+                                    <th>Date: <t t-esc="o.create_date" /></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Customer Name:</td>
+                                    <td><t t-esc="o.customer_id.display_name" /></td>
+                                    <td>Order Number:</td>
+                                    <td><t t-esc="o.order_number" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Due Date:</td>
+                                    <td><t t-esc="o.due_date" /></td>
+                                    <td>Reference:</td>
+                                    <td><t t-esc="o.reference" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Products:</td>
+                                    <td colspan="3">
+                                        <t t-foreach="o.product_line_ids" t-as="product">
+                                            <p>
+                                                Product: <t t-esc="product.name" /> -
+
+                                               Image : <t t-esc="product.image" />
+                                                Unit Price: <t t-esc="product.price" />
+                                            </p>
+                                        </t>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        </main>
+                    </div>
+                     <!-- Footer -->
+                    <div class="footer o_standard_footer">
+                        <div class="text-center" style="border-top: 1px solid black;">
+                            <h1>Custom Footer</h1>
+                           <p>Thank you!</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

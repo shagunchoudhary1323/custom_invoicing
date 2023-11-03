@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="email_template_custom_invoice" model="mail.template">
+            <field name="name">Custom Invoice</field>
+            <field name="model_id" ref="model_custom_invoicing_invoice"/>
+            <field name="email_from">your@email.com</field>
+            <field name="subject">Invoice for your order</field>
+
+            <field name="report_template" ref="custom_invoicing.report_invoice"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <template id="my_custom_report_template">
+            <t t-call="web.external_layout">
+                <div class="header">
+                    <!-- Add your header content here -->
+                    <h1>Invoice Header</h1>
+                    <p>Company Name: Your Company</p>
+                    <p>Address: Your Address</p>
+                    <p>Phone: Your Phone</p>
+                </div>
+                <div class="page">
+                    <main>
+                        <!-- Main content goes here -->
+                        <t t-foreach="records" t-as="record">
+                            <h1>Invoice for Customer: <t t-esc="record.customer_id.name"/></h1>
+                            <p>Order Number: <t t-esc="record.order_number"/></p>
+                            <p>Due Date: <t t-esc="record.due_date"/></p>
+                            <p>Reference: <t t-esc="record.reference"/></p>
+                        </t>
+                        <!-- You can add a table for product lines here -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </main>
+                </div>
+                <div class="footer">
+                    <!-- Add your footer content here -->
+                    <p>Thank you for your business!</p>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

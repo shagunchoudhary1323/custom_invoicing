@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="my_report" model="ir.actions.report">
+            <field name="name">My report</field>
+            <field name="model">custom_invoicing.invoice</field>
+             <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_invoicing.my_custom_report_template</field>
+            <field name="report_file">custom_invoicing.my_custom_report_template</field>
+            <field name="binding_model_id" ref="custom_invoicing.model_custom_invoicing_invoice"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

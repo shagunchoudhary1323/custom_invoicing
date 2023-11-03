@@ -1,0 +1,21 @@
+{
+    'name': 'Custom Invoicing Module',
+    'version': '1.0',
+    'summary': 'Enhance the invoicing process in Odoo',
+    'description': 'A custom module for creating and managing invoices.',
+    'category': 'Sales/Invoicing',
+    'author': 'Shagun',
+    'license': 'AGPL-3',
+    'depends': ['base', 'account'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/custom_invoice_view.xml',
+        'views/custom_invoice_menu.xml',
+        'reports/test_template.xml',
+        'reports/report1.xml',
+        'views/email_template.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
